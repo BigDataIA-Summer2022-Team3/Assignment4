@@ -27,6 +27,7 @@ authenticator = stauth.Authenticate(usernames, usernames, hashed_passwords, "Log
 
 name, authentication_status, username = authenticator.login("Login" , "main")
 
+authenticator.logout('Logout', 'sidebar')
 
 def load_token(username): #password if has
     url = "https://damg-team3-lookout.herokuapp.com/token"
@@ -54,16 +55,16 @@ if st.session_state["authentication_status"]:
     # authenticator.logout('Logout', 'sidebar')
     st.markdown(f'# Welcome *{st.session_state["name"]}*')
 
-    Host, User, Password = st.secrets["Host"] , st.secrets["User"] , st.secrets["Password"]
-    # Host, User, Password = funct()
-    con = pymysql.connect(host = Host, user = User, password = Password, database = 'lemon', charset = "utf8")
-    c = con.cursor()
-    c.execute('select * from user_table where username = "%s"' % st.session_state.username)
-    datainfo = c.fetchall()
-    username = datainfo[0][1]
+    # Host, User, Password = st.secrets["Host"] , st.secrets["User"] , st.secrets["Password"]
+    # # Host, User, Password = funct()
+    # con = pymysql.connect(host = Host, user = User, password = Password, database = 'lemon', charset = "utf8")
+    # c = con.cursor()
+    # c.execute('select * from user_table where username = "%s"' % st.session_state.username)
+    # datainfo = c.fetchall()
+    # username = datainfo[0][1]
 
-    load_token(username) #dbpassword if has
-    logging.debug(f'User {username} log in')
+    # load_token(username) #dbpassword if has
+    # logging.debug(f'User {username} log in')
 
     
     

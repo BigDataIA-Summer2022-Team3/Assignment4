@@ -1,3 +1,4 @@
 python3-pip
 streamlit
 streamlit-authenticator==0.1.5
+pymysql
