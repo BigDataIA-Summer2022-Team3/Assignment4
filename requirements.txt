@@ -1,3 +1,14 @@
-python3-pip
+# python3-pip
 streamlit
 streamlit-authenticator==0.1.5
+tensorflow_hub
+tensorflow_datasets
+pyyaml
+torch
+datascope==0.0.3
+pyarrow
+tqdm
+pandas
+xgboost
+seaborn
+loguru

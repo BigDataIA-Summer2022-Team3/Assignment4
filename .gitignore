@@ -88,11 +88,11 @@ target/
 # Mypy cache
 .mypy_cache/
 
-/venv/*
+/assign4/*
 
 sample/
 
-config.py
+
 
 dbconfig.py
 

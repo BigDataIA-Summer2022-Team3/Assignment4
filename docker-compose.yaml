@@ -77,6 +77,7 @@ services:
     container_name: dataperf-debugging-submission
     build: .
     volumes:
+      # - /dataperf:/app/dataperf #
       - ./data:/app/data
       - ./embeddings:/app/embeddings
       - ./results:/app/results

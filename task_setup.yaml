@@ -7,7 +7,7 @@ paths:
   results_folder: results/
   submission_folder: submissions/
 tasks:
-- data_id: 04rky
+- data_id: 04hgtk
   noise_level: 0.3
   test_size: 500
   train_size: 300
