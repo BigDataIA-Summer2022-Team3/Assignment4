@@ -39,6 +39,13 @@ if st.button('Run'):
         "results_folder": "results/"
     }
 
+    pathsdocker = {
+        "embedding_folder": "/app/embeddings/",
+        "groundtruth_folder": "/app/data/",
+        "submission_folder": "/app/submissions/",
+        "results_folder": "/app/results/"
+    }
+
     tasks = {
         "data_id": modelName,
         "train_size": 300,
@@ -57,15 +64,24 @@ if st.button('Run'):
                 'baselines': baselines
                 }
 
+    desired_caps_docker = {
+                'paths': pathsdocker,
+                'tasks': tasks1,
+                'baselines': baselines
+                }
 
     st.write(desired_caps)
 
     curpath = os.path.dirname(os.path.realpath(__file__))
-    yamlpath = os.path.join(curpath, "../../task_setup.yaml")
-
+    
     # 写入到yaml文件
+    yamlpath = os.path.join(curpath, "../../task_setup.yml")
     with open(yamlpath, "w", encoding="utf-8") as f:
         yaml.dump(desired_caps, f)
+
+    yamlpath_docker = os.path.join(curpath, "../../task_setup_docker.yml")
+    with open(yamlpath_docker, "w", encoding="utf-8") as f:
+        yaml.dump(desired_caps_docker, f)
 
     # 等待运行，最好运行后有信息返回，实在不行就sleep
 
